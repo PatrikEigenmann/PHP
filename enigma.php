@@ -1,4 +1,4 @@
-#!/bin/php
+#!/opt/homebrew/opt/php@8.3/bin/php
 <?php
 /* ***************************************************************************************************
  * enigma.php - The Enigma class is a simplified representation of the Enigma machine, a cipher device

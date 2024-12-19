@@ -1,4 +1,4 @@
-#!/bin/php
+#!/opt/homebrew/opt/php@8.3/bin/php
 <?php
 /* ***************************************************************************************************
  * numbers.php - In this game, the program first generates a random number between 1 and 100. Then it

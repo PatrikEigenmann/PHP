@@ -1,4 +1,4 @@
-#!/bin/php
+#!/opt/homebrew/opt/php@8.3/bin/php
 <?php
 /* ***************************************************************************************************
  * currencyConverter - Meet the CurrencyConverter, your new best friend in the world of finance and

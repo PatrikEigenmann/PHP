@@ -1,4 +1,4 @@
-#!/bin/php
+#!/opt/homebrew/opt/php@8.3/bin/php
 <?php
 /* ***************************************************************************************************
  * rockPaperScissors.php - In this code, the game function is the same as before. The $choices array

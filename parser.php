@@ -1,4 +1,4 @@
-#!/bin/php
+#!/opt/homebrew/opt/php@8.3/bin/php
 <?php
 /* ***************************************************************************************************
  * parser.php - Imagine having a personal assistant who could read a letter for you, understand the
