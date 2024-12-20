@@ -20,36 +20,77 @@
 
  /**
   * Class Enigma
+  * The Enigma class is a simplified representation of the Enigma machine, a cipher device used by the
+  * Germans during World War II. 
   *
-  * The Enigma class is a simplified representation of the Enigma machine, a cipher device used by the Germans during World War II. 
+  * @property array $rotors
+  *     An array representing the rotors in the Enigma machine. Each rotor is an integer that determines
+  *     how much to shift a character.
   *
-  * @property array $rotors An array representing the rotors in the Enigma machine. Each rotor is an integer that determines how much to shift a character.
-  * @property int $reflector An integer representing the reflector in the Enigma machine. The reflector determines how much to shift a character after it has passed through all the rotors.
+  * @property int $reflector
+  *     An integer representing the reflector in the Enigma machine. The reflector determines how much to
+  *     shift a character after it has passed through all the rotors.
   *
-  * @method __construct($rotors, $reflector) The constructor method. It initializes the rotors and reflector properties with the given arguments.
-  * @method rotate() A private method that rotates the rotors by one position. This method is called after each character is ciphered or deciphered.
-  * @method cypher($input) This method takes a string as input and returns the ciphered text. It passes each character of the input through the rotors and the reflector, shifting it by the corresponding amounts. After each character, the rotors are rotated by one position.
-  * @method decypher($input) This method takes a string as input and returns the deciphered text. It reverses the operations of the cypher method, passing each character through the rotors and the reflector in the opposite order and direction.
+  * @method __construct($rotors, $reflector)
+  *     The constructor method. It initializes the rotors and reflector properties with the given arguments.
   *
-  * Please note that this is a very simplified version of the Enigma machine and doesn't include many of its features, such as the plugboard, multiple rotor sets, or double stepping of rotors. Also, this code doesn't provide any real security, it's just for illustrative purposes. For real encryption, consider using established libraries and algorithms.
+  * @method rotate()
+  *     A private method that rotates the rotors by one position. This method is called after each character
+  *     is ciphered or deciphered.
   *
-  * Remember to handle edge cases and errors in your actual code. For example, this code assumes that the input is always uppercase and doesn't contain any characters other than A-Z. If your input may be different, you'll need to add code to handle that. You might also want to add error checking to make sure the rotors and reflector arguments to the constructor are valid.
+  * @method cypher($input)
+  *     This method takes a string as input and returns the ciphered text. It passes each character of the
+  *     input through the rotors and the reflector, shifting it by the corresponding amounts. After each
+  *     character, the rotors are rotated by one position.
+  *
+  * @method decypher($input)
+  *     This method takes a string as input and returns the deciphered text. It reverses the operations
+  *     of the cypher method, passing each character through the rotors and the reflector in the opposite
+  *     order and direction.
+  *
+  * Please note that this is a very simplified version of the Enigma machine and doesn't include many of its
+  * features, such as the plugboard, multiple rotor sets, or double stepping of rotors. Also, this code
+  * doesn't provide any real security, it's just for illustrative purposes. For real encryption, consider
+  * nusing established libraries and algorithms.
+  *
+  * Remember to handle edge cases and errors in your actual code. For example, this code assumes that the
+  * input is always uppercase and doesn't contain any characters other than A-Z. If your input may be
+  * different, you'll need to add code to handle that. You might also want to add error checking to make
+  * sure the rotors and reflector arguments to the constructor are valid.
   */
 class Enigma {
     private $rotors;
     private $reflector;
  
+    /**
+     * The constructor method. It initializes the rotors and reflector properties with the given arguments.
+     * 
+     * @param $rotor        Rotor explanation.
+     * @param $reflector    Reflector explanation.
+     */
     public function __construct($rotors, $reflector) {
         $this->rotors = $rotors;
         $this->reflector = $reflector;
     }
  
+    /**
+     * A private method that rotates the rotors by one position. This method is called after each character
+     * is ciphered or deciphered.
+     */
     private function rotate() {
         foreach ($this->rotors as $rotor) {
             $rotor = ($rotor + 1) % 26;
         }
     }
  
+    /**
+     * This method takes a string as input and returns the ciphered text. It passes each character of the
+     * input through the rotors and the reflector, shifting it by the corresponding amounts. After each
+     * character, the rotors are rotated by one position.
+     * 
+     * @param $input    Input value.
+     * @return $output  Encrypted text.
+     */
     public function cypher($input) {
         $output = '';
         for ($i = 0; $i < strlen($input); $i++) {
@@ -67,6 +108,14 @@ class Enigma {
         return $output;
     }
  
+    /**
+     * This method takes a string as input and returns the deciphered text. It reverses the operations
+     * of the cypher method, passing each character through the rotors and the reflector in the opposite
+     * order and direction.
+     * 
+     * @param $input    input value.
+     * @return $output  decrypted text.
+     */
     public function decypher($input) {
         $output = '';
         for ($i = 0; $i < strlen($input); $i++) {

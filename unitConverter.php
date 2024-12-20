@@ -27,20 +27,27 @@
  * ***************************************************************************************************/
 
 /**
- * Class UnitConverter
- *
- * This class provides methods for converting between different units of measurement.
- * Currently supported conversions are:
- * - Miles to kilometers and vice versa
- * - Pounds to kilograms and vice versa
- * - Ounces to grams and vice versa
- * - Meters to yards and vice versa
- * - Inches to centimeters and vice versa
- *
- * Each conversion method takes a single argument, the value to be converted,
- * and returns the converted value.
+ * The UnitConverter class is designed to facilitate the conversion of various units of measurement 
+ * in a seamless and efficient manner. Imagine you have different values such as distances in miles, 
+ * weights in pounds, or lengths in inches that you need to convert into their respective metric 
+ * counterparts like kilometers, kilograms, or centimeters. The UnitConverter class handles these 
+ * conversions for you effortlessly.
+ * 
+ * For instance, if you have a distance in miles and want to know the equivalent distance in 
+ * kilometers, the class will do the math for you. Similarly, it can convert weights from pounds 
+ * to kilograms, ounces to grams, and vice versa. Additionally, it takes care of converting lengths, 
+ * such as from meters to yards or from inches to centimeters.
+ * 
+ * The purpose of the UnitConverter class is to make these conversions straightforward and 
+ * user-friendly, eliminating the need for manual calculations. This can be especially useful in 
+ * various fields like logistics, manufacturing, or any scenario where precise measurements and 
+ * conversions are necessary.
+ * 
+ * In essence, the UnitConverter class acts as a reliable tool that simplifies the process of 
+ * converting different units, ensuring accuracy and saving time.
  */
 class UnitConverter {
+
     // Conversion ratios
     private $miles_to_km_ratio = 1.60934;
     private $lbs_to_kg_ratio = 0.453592;
@@ -48,52 +55,142 @@ class UnitConverter {
     private $m_to_yd_ratio = 1.09361;
     private $in_to_cm_ratio = 2.54;
 
-    // Method to convert miles to kilometers
+    /**
+     * Converts a value from miles to kilometers.
+     * This method takes a distance measured in miles and converts it into its equivalent in kilometers.
+     * The conversion is based on the widely accepted ratio where 1 mile is equal to approximately
+     * 1.60934 kilometers. This method ensures that distance measurements can be easily converted from
+     * the imperial system to the metric system.
+     * 
+     * @param float $miles - The amount of miles to convert.
+     * @return float The calculated value of kilometers.
+     */
     public function milesToKm($miles) {
         return $miles * $this->miles_to_km_ratio;
     }
 
-    // Method to convert kilometers to miles
+    /**
+     * Converts a value from miles to kilometers.
+     * This method takes a distance measured in miles and converts it into its equivalent in kilometers.
+     * The conversion is based on the widely accepted ratio where 1 mile is equal to approximately
+     * 1.60934 kilometers. This method ensures that distance measurements can be easily converted
+     * from the imperial system to the metric system.
+     *
+     * @param float $miles The distance in miles to be converted.
+     * @return float The equivalent distance in kilometers.
+     */
     public function kmToMiles($km) {
         return $km / $this->miles_to_km_ratio;
     }
 
-    // Method to convert pounds to kilograms
+    /**
+     * Converts a value from pounds to kilograms.
+     * This method takes a weight measured in pounds and converts it into its equivalent in
+     * kilograms. The conversion is based on the widely accepted ratio where 1 pound is equal
+     * to approximately 0.453592 kilograms. This method ensures that weight measurements can be
+     * easily converted from the imperial system to the metric system.
+     *
+     * @param float $lbs The weight in pounds to be converted.
+     * @return float The equivalent weight in kilograms.
+     */
     public function lbsToKg($lbs) {
         return $lbs * $this->lbs_to_kg_ratio;
     }
 
-    // Method to convert kilograms to pounds
+    /**
+     * Converts a value from kilograms to pounds.
+     * This method takes a weight measured in kilograms and converts it into its equivalent in pounds.
+     * The conversion is based on the widely accepted ratio where 1 kilogram is approximately equal
+     * to 2.20462 pounds. This method ensures that weight measurements can be easily converted from
+     * the metric system to the imperial system.
+     *
+     * @param float $kg The weight in kilograms to be converted.
+     * @return float The equivalent weight in pounds.
+     */
     public function kgToLbs($kg) {
         return $kg / $this->lbs_to_kg_ratio;
     }
 
-    // Method to convert ounces to grams
+    /**
+     * Converts a value from ounces to grams.
+     * This method takes a weight measured in ounces and converts it into its equivalent in grams.
+     * The conversion is based on the widely accepted ratio where 1 ounce is equal to approximately
+     * 28.3495 grams. This method ensures that weight measurements can be easily converted from the
+     * imperial system to the metric system.
+     *
+     * @param float $oz The weight in ounces to be converted.
+     * @return float The equivalent weight in grams.
+     */
     public function ozToG($oz) {
         return $oz * $this->oz_to_g_ratio;
     }
 
-    // Method to convert grams to ounces
+    /**
+     * Converts a value from grams to ounces.
+     * This method takes a weight measured in grams and converts it into its equivalent in ounces.
+     * The conversion is based on the widely accepted ratio where 1 gram is approximately equal to
+     * 0.03527396 ounces. This method ensures that weight measurements can be easily converted from
+     * the metric system to the imperial system.
+     *
+     * @param float $g The weight in grams to be converted.
+     * @return float The equivalent weight in ounces.
+     */
     public function gToOz($g) {
         return $g / $this->oz_to_g_ratio;
     }
 
-    // Method to convert meters to yards
+    /**
+     * Converts a value from meters to yards.
+     * This method takes a length measured in meters and converts it into its equivalent in yards.
+     * The conversion is based on the widely accepted ratio where 1 meter is equal to approximately
+     * 1.09361 yards. This method ensures that length measurements can be easily converted from the
+     * metric system to the imperial system.
+     *
+     * @param float $m The length in meters to be converted.
+     * @return float The equivalent length in yards.
+     */
     public function mToYd($m) {
         return $m * $this->m_to_yd_ratio;
     }
 
-    // Method to convert yards to meters
+    /**
+     * Converts a value from yards to meters.
+     * This method takes a length measured in yards and converts it into its equivalent in meters.
+     * The conversion is based on the widely accepted ratio where 1 yard is equal to approximately
+     * 0.9144 meters. This method ensures that length measurements can be easily converted from the
+     * imperial system to the metric system.
+     *
+     * @param float $yd The length in yards to be converted.
+     * @return float The equivalent length in meters.
+     */
     public function ydToM($yd) {
         return $yd / $this->m_to_yd_ratio;
     }
 
-    // Method to convert inches to centimeters
+    /**
+     * Converts a value from inches to centimeters.
+     * This method takes a length measured in inches and converts it into its equivalent in centimeters.
+     * The conversion is based on the widely accepted ratio where 1 inch is equal to approximately 2.54
+     * centimeters. This method ensures that length measurements can be easily converted from the
+     * imperial system to the metric system.
+     *
+     * @param float $in The length in inches to be converted.
+     * @return float The equivalent length in centimeters.
+     */
     public function inToCm($in) {
         return $in * $this->in_to_cm_ratio;
     }
 
-    // Method to convert centimeters to inches
+    /**
+     * Converts a value from centimeters to inches.
+     * This method takes a length measured in centimeters and converts it into its equivalent in inches.
+     * The conversion is based on the widely accepted ratio where 1 centimeter is approximately equal to
+     * 0.393701 inches. This method ensures that length measurements can be easily converted from the
+     * metric system to the imperial system.
+     *
+     * @param float $cm The length in centimeters to be converted.
+     * @return float The equivalent length in inches.
+     */
     public function cmToIn($cm) {
         return $cm / $this->in_to_cm_ratio;
     }
