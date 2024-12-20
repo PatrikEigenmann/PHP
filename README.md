@@ -80,7 +80,9 @@ unit conversions!
 
 To use these scripts in your project, simply clone the repository and include the necessary files in your PHP project:
 
-\\\bash git clone https://github.com/PatrikEigenmann/php.git \\\
+'''bash
+git clone https://github.com/PatrikEigenmann/php.git
+'''
 
 
 ## License
