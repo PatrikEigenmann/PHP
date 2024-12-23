@@ -21,7 +21,8 @@
  * Author:       Patrik Eigenmann
  * eMail:        p.eigenmann@gmx.net
  * ---------------------------------------------------------------------------------------------------
- * Tue	2023-12-26	File created.													    Version: 00.01
+ * Tue 2023-12-26 File created.                                                         Version: 00.01
+ * Sun 2024-12-22 Bugfix: get($attribute) - if param isn't in config.xml return null.   Version: 00.02
  * ***************************************************************************************************/
 
 /* ---------------------------------------------------------------------------------------------------
@@ -63,7 +64,10 @@ class Config {
      * @return mixed The attribute value
      * ----------------------------------------------------------------------------------------------- */
     public function get($attribute) {
-        return $this->config[$attribute];
+        if(isset($this->config[$attribute]))
+            return $this->config[$attribute];
+        else
+            return null;
     }
 }
 
